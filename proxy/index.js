@@ -22,6 +22,7 @@ const op = new Proxy(person, {
     deleteProperty(target, prop){
         console.log('Deleting...', prop);
         delete target[prop];
+        console.log('deleted')
         return true;
     }
 })
