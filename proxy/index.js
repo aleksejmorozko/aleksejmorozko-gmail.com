@@ -6,6 +6,12 @@ const person = {
 
 const op = new Proxy(person, {
     get(target, prop){
+        if (!(prop in target)){
+            return prop
+            .split('_')
+            .map(p => target[p])
+            .join(' ')
+        }
         console.log('Getting prop ${prop}');
         return target[prop];
     },
