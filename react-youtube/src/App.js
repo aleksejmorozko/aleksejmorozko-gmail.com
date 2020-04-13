@@ -2,14 +2,19 @@ import React from 'react';
 import TodoList from './Todo/TodoList';
 
 function App() {
-    const todos =[
+    let todos = [
         {id: 1, completed: false, title: 'Buy bread'},
-        {id: 2, completed: false, title: 'Buy shugar'},
+        {id: 2, completed: false, title: 'Buy sugar'},
         {id: 3, completed: false, title: 'Buy milk'}
     ]
 
   function toggleTodo(id){
-    console.log(id)
+    todos = todos.map(todo => {
+        if (todo.id === id) {
+            todo.completed = !todo.completed
+        }
+        return todo
+    })
   } 
 
   return (
