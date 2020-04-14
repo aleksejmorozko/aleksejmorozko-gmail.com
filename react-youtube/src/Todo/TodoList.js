@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TodoItem from './TodoItem';
+
+
 const styles = {
     ul: {
         listStyle: 'none',
@@ -9,7 +11,7 @@ const styles = {
     }
 }
 
-function TodoList(props) {
+function TodoList(props) {    
     return (
         <ul style={styles.ul}>
             {props.todos.map((todo, index) => {
